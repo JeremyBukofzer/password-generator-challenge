@@ -18,12 +18,35 @@ function generatePassword() {
     writePassword();
  
   } else {
-    // Options to include criteria
-    criteriaLower = confirm("would you like to include lowercase letters?")
-    criteriaUpper = confirm("would you like to include uppercase letters?")
-    criteriaNumber = confirm("would you like to include numbers?")
-    criteriaSpecial = confirm("would you like to include special characters?")
+    alert("Your password will be " + criteriaLength + " characters long.")
   }
+ 
+    // Options to include criteria with validations for selections
+    criteriaLower = confirm("would you like to include lowercase letters?")
+    if (!criteriaLower) {
+      alert("Lowercase letters will NOT be included in your password.")
+    } else {
+      alert("Lowercase letters will be included in your password.")
+    }
+    criteriaUpper = confirm("would you like to include uppercase letters?")
+    if (!criteriaUpper) {
+      alert("Uppercase letters will NOT be included in your password.")
+    } else {
+      alert("Uppercase letters will be included in your password.")
+    }
+    criteriaNumber = confirm("would you like to include numbers?")
+    if (!criteriaNumber) {
+      alert("Numbers will NOT be included in your password.")
+    } else {
+      alert("NUmbers will be included in your password.")
+    }
+    criteriaSpecial = confirm("would you like to include special characters?")
+    if (!criteriaSpecial) {
+      alert("Special characters will NOT be included in your password.")
+    } else {
+      alert("Special characters will be included in your password.")
+    }
+  
 
   // Alerts if no criteria is entered.
   if (!criteriaLower && !criteriaUpper && !criteriaNumber && !criteriaSpecial) {
