@@ -12,6 +12,7 @@ function generatePassword() {
   // Alerts if password length value is not equal to criteria
   if (!criteriaLength) {
  
+  // Alerts if entered value is not 8-128
   } else if (criteriaLength < 8 || criteriaLength > 128) {
     alert("Please enter number 8-128.");
     writePassword();
@@ -22,8 +23,13 @@ function generatePassword() {
     criteriaUpper = confirm("would you like to include uppercase letters?")
     criteriaNumber = confirm("would you like to include numbers?")
     criteriaSpecial = confirm("would you like to include special characters?")
-  };
+  }
 
+  // Alerts if no criteria is entered.
+  if (!criteriaLower && !criteriaUpper && !criteriaNumber && !criteriaSpecial) {
+    alert("At least one criteria must be selected.")
+  }
+  //includes selected criteria
   if (criteriaLower) {
     selections = selections.concat(charsLower)
   }
@@ -36,8 +42,16 @@ function generatePassword() {
   if (criteriaSpecial) {
     selections = selections.concat(charsSpecial)
   }
-
+  
+  //Generates random characters based on selected criteria.
+  let createdPassword = "" 
+  for (let i = 0; i < criteriaLength; i++) {
+    let generate =[Math.floor(Math.random() * selections.length)]
+    createdPassword = createdPassword + selections[generate];
   }
+
+  return createdPassword;
+  
 };
 
 // Assignment Code
