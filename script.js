@@ -1,4 +1,5 @@
 
+// possible characters to be used in password
 var charsLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var charsUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var charsNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -38,7 +39,7 @@ function generatePassword() {
     if (!criteriaNumber) {
       alert("Numbers will NOT be included in your password.")
     } else {
-      alert("NUmbers will be included in your password.")
+      alert("Numbers will be included in your password.")
     }
     criteriaSpecial = confirm("would you like to include special characters?")
     if (!criteriaSpecial) {
@@ -69,8 +70,8 @@ function generatePassword() {
   //Generates random characters based on selected criteria.
   let createdPassword = "" 
   for (let i = 0; i < criteriaLength; i++) {
-    let generate =[Math.floor(Math.random() * selections.length)]
-    createdPassword = createdPassword + selections[generate];
+    let rando =[Math.floor(Math.random() * selections.length)]
+    createdPassword = createdPassword + selections[rando];
   }
 
   return createdPassword;
